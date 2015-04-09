@@ -1,0 +1,75 @@
+body, html{
+  height:100%;
+  background-color: #ffffff;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
+
+header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  padding-top: 20px;
+  padding-left: 200px;
+  color:white;
+  background-color: #7b1113;
+  height:50px;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  font-size: 34px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.3999996185303px;
+}
+
+#logo{
+  position: absolute;
+  width:120px;
+  left: 50px;
+  top: 0px;
+}
+
+#wrapper {
+  display: inline-block;
+  width:100%;
+}
+
+main {
+  float:left;
+  display: inline-block;
+  background-color:#cccccc;
+  width:70%;
+
+  height:100%;
+}
+
+#side {
+  display:inline-block;
+  float:left;
+  width:30%;
+  height:100%;
+  background-color: red;
+  min-height: 450px;
+}
+
+
+#responses {
+  width: 300px;
+  height: auto;
+  min-height: 150px;
+  max-height: 500px;
+  overflow: auto;
+  border: 3px inset #7b1113;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+}
+
+#input {
+  width: 300px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
