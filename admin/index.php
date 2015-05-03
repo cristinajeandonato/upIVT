@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>UPIVT Admin Page</title>
+		<link rel="stylesheet" type="text/css" media="all" href="r../reset.css">
+    	<link rel="stylesheet" type="text/css" media="all" href="admin_login.css">
 	</head>
 	<body>
 		<form action="login.php" method="POST">

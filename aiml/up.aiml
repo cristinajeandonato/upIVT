@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0">
+<category>
+	<pattern>
+		WHAT IS UP CEBU
+	</pattern>
+	<template>
+		The University of the Philippines Cebu (UP Cebu) is an autonomous college of the UP System and the oldest among the UP campuses outside of Luzon.
+	</template>
+</category>
+<category>
+	<pattern>
+		WHERE IS UP CEBU
+	</pattern>
+	<template>
+		Up Cebu is located at Gorordo Avenue Lahug, Cebu City, Philippines
+	</template>
+</category>
+<category>
+	<pattern>
+		WHO IS THE CURRENT DEAN OF UP CEBU
+	</pattern>
+	<template>
+		Atty. Liza D. Corro
+	</template>
+</category>
+<category>
+	<pattern>
+		WHAT ARE THE CLUSTERS OF PROGRAMS OFFERED BY UP CEBU
+	</pattern>
+	<template>
+		UP Cebu is composed of four academic clusters, namely: Arts and Humanities, Business Management, Sciences and Social Sciences.
+	</template>
+</category>
+<category>
+	<pattern>
+		Arts and Humanities
+	</pattern>
+	<template>
+	Renamed in 2011, the former Humanities Division, now known as the Arts and Humanities Cluster (AHC), has its classrooms and faculty room at the second floor of the Undergraduate Building of the University of the Philippines (UP) Cebu campus in Lahug. The Fine Arts workshops are located on the grounds of the Lahug campus.
+
+	The AHC offers four certificate and degree programs in Fine Arts and one degree program in Mass Communication:
+
+	Course Offerings
+		Certificate in Fine Arts (Studio Arts), 3-year program
+		Certificate in Fine Arts (Product Design), 3-year program
+		Bachelor of Fine Arts (Studio Arts)
+		Bachelor of Fine Arts (Product Design)
+		Bachelor of Arts (Mass Communication)
+	</template>
+</category>
+</aiml>

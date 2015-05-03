@@ -1,0 +1,12 @@
+body{
+	background-color: #7b1113;
+	background-image: url("../assets/UP_logo.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-position: left center; 
+    background-size: 45%;
+}
+form {
+	color: white;
+	float: right;
+}

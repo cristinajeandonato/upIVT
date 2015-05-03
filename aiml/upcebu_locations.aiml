@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+	<category>
+		<pattern>
+			WHERE IS THE ADMINISTRATION BUILDING
+		</pattern>
+		<template>
+			It is located at the middle of the right side of the UP Cebu Campus if you are coming from JY Square or from IT Park
+		</template>
+	</category>
+	<category>
+		<pattern>
+			WHERE IS THE CLINIC
+		</pattern>
+		<template>
+			The campus clinic is located across the Administration Building in between the canteen and the Management Division
+		</template>
+	</category>
+	<category>
+		<pattern>
+			WHERE IS THE AS BUILDING
+		</pattern>
+		<template>
+			The AS Building is located at the left side of the Gorordo Avenue near the Lahug Baranggay Hall and Elementary School if you are coming from JY Square or from IT Park
+		</template>
+	</category>
+	<category>
+		<pattern>
+			WHERE IS THE UP Cebu Dormitory
+		</pattern>
+		<template>
+			The UP Cebu Dormitory is located behind the canteen
+		</template>
+	</category>
+	<category>
+		<pattern>
+			WHERE IS THE UP Cebu Library
+		</pattern>
+		<template>
+			The UP Cebu Dormitory is located behind the canteen
+		</template>
+	</category>
+</aiml>

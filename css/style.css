@@ -4,7 +4,6 @@ body, html{
   font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 }
 
-/*header*/
 header {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -32,7 +31,6 @@ header h1 {
   top: 0px;
 }
 
-/*main content*/
 #wrapper {
   display: inline-block;
   width:100%;
@@ -48,10 +46,9 @@ main {
 }
 svg{
   background-color:#cccccc;
-  width:200%;
 
 }
-#legend a {
+a {
   text-decoration: none;
   color:green;
 }
@@ -61,19 +58,18 @@ svg{
   float:left;
   width:30%;
   height:100%;
-  min-height: 100%;
-  background-color: red;
+/*  background-color: red;*/
   min-height: 450px;
 }
 
-/*bot*/
+
 #responses {
   width: 300px;
   height: auto;
   min-height: 150px;
   max-height: 500px;
   overflow: auto;
-  border: 1px inset rgba(0,0,0,0.8);
+  border: 3px inset rgba(0,0,0,0.8);
   margin-left: auto;
   margin-right: auto;
   padding: 5px;
@@ -86,7 +82,15 @@ svg{
   margin-right: auto;
 }
 
-/* modals */
+#asbuilding{
+  background-color: blue;
+}
+
+#map-canvas {
+  width: 500px;
+  height: 400px;
+}
+
 .modalDialog {
   position: fixed;
   color:#ffffff;
@@ -140,3 +144,10 @@ svg{
 }
 
 .close:hover { background: green; }
+
+#dialog{   
+  width: auto;
+  min-height: 13.039999961853px;
+  height: auto;" 
+  /*class="ui-dialog-content ui-widget-content
+}*/

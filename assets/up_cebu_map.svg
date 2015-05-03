@@ -1,6 +1,7 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="800px" height="600px" viewBox="0 0 800 600" enable-background="new 0 0 800 600" xml:space="preserve">
-<g>
+<a xlink:href="/svg/index.html" target="_top">
+<g id="asbuilding">
 	
 		<rect x="122.404" y="80.368" transform="matrix(0.9729 -0.2314 0.2314 0.9729 -23.8976 34.4187)" fill="#C1272D" width="24.787" height="77.462"/>
 	
@@ -20,6 +21,7 @@
 	<path fill="#C1272D" d="M226.418,136.576c0.339,1.422-0.539,2.85-1.96,3.189l-10.545,2.515c-1.422,0.339-2.85-0.538-3.188-1.96
 		l-0.093-0.39c-0.339-1.422,0.539-2.85,1.96-3.189l10.545-2.515c1.421-0.339,2.85,0.539,3.188,1.96L226.418,136.576z"/>
 </g>
+</a>
 <g>
 	<g>
 		<g>

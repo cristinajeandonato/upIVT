@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+	<category>
+		<pattern>
+			WHERE IS THE DEAN'S OFFICE
+		</pattern>
+		<template>
+			It is located at the Administration Building
+		</template>
+	</category>
+	<category>
+		<pattern>
+			WHAT ARE THE FUNCTIONS OF THE DEAN's OFFICE
+		</pattern>
+		<template>
+		</template>
+</aiml>
