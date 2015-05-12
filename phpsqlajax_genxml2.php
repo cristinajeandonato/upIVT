@@ -45,7 +45,24 @@ while ($row = @mysql_fetch_assoc($result)){
   echo 'lng="' . $row['lng'] . '" ';
   echo 'type="' . $row['type'] . '" ';
   echo 'picture="' . parseToXML($row['picture']) .'" ';
-  echo '/>';
+  echo '>';
+  if($row['type']=='building'){
+    $query2 = "SELECT * FROM offices WHERE marker_id = $row[id]";
+    $result2 = mysql_query($query2);
+    if (!$result2) {
+      die('Invalid query: ' . mysql_error());
+    }
+    echo '<offices>';
+    while($row2 = @mysql_fetch_assoc($result2)){
+      echo '<office ';
+      echo 'name="' . parseToXML($row2['office_name']) . '" ';
+      // echo 'description="' . parseToXML($row2['description']) .'" ';
+      // echo 'current_head="' . parseToXML($row2['current_head']) .'" ';
+      echo '/>';
+    }
+    echo '</offices>';
+  }
+  echo '</marker>';
 }
 
 // End XML file

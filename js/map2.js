@@ -1,6 +1,6 @@
 var customIcons = {
   housing: {
-    icon: 'assets/house_green_icon.png',
+    icon: 'assets/images/house_green_icon.png',
     shadow: 'http://labs.google.com/ridefinder/images/mm_20_shadow.png'
   },
   library: {
@@ -45,7 +45,6 @@ function load() {
 
   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-
   var boxOptions = { disableAutoPan: true,
     alignBottom:true,
     closeBoxURL:"img/close-btn.png",
@@ -64,12 +63,20 @@ function load() {
     var address = markers[i].getAttribute("address");
     var type = markers[i].getAttribute("type");
     var picture = markers[i].getAttribute("picture");
+
+    var offices = xml.documentElement.getElementsByTagName("office");
+
+    var office_list = "";
+    for(var j = 0; j < offices.length; j++){
+      office_list += ("<li>" + offices[j].getAttribute("name") + "</li>");
+    }
+
     var point = new google.maps.LatLng(
     parseFloat(markers[i].getAttribute("lat")),
     parseFloat(markers[i].getAttribute("lng")));
     var html =
     "<div class='iwContainer'><div class='iwTitle'><h3>" + name + "</h3></div>" +
-    "<div class='iwContent'><img src='" + picture + "'/>" + picture + address + " <br/><a href='http://upcebu.edu.ph/'>See More</a></div></div>";
+    "<div class='iwContent'><img src='" + picture + "'/> <ul>" + office_list + "</ul><br/>" + address + " <br/><a href='http://upcebu.edu.ph/'>See More</a></div></div>";
     // "<b>" + name + "</b> <br/>" + address;
     var icon = customIcons[type] || {};
     var marker = new google.maps.Marker({
@@ -98,6 +105,19 @@ function load() {
   map.mapTypes.set('map_style', styledMap);
   map.setMapTypeId('map_style');
 
+  // var searchBox = new google.maps.places.SearchBox(document.getElementById('input-search-box'));
+
+  var defaultBounds = new google.maps.LatLngBounds(
+      new google.maps.LatLng(10.322450, 123.895195),
+      new google.maps.LatLng(10.322661, 123.902061));
+  map.fitBounds(defaultBounds);
+
+  var input =(document.getElementById('input-search-box'));
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+  var searchBox = new google.maps.places.SearchBox((input));
+
+  
 }
 
 // function toggleBounce(marker, i){
