@@ -296,5 +296,3 @@ VALUES ([default_bot_id], '[bot_name]', '[bot_desc]', '[bot_active]', '[bot_pare
     else $out = getSection('InstallError', $page_template);
     return $out . $errorMessage;
   }
-
-

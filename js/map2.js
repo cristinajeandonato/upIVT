@@ -63,21 +63,24 @@ function load() {
     var address = markers[i].getAttribute("address");
     var type = markers[i].getAttribute("type");
     var picture = markers[i].getAttribute("picture");
-
-    var offices = xml.documentElement.getElementsByTagName("office");
-
-    var office_list = "";
-    for(var j = 0; j < offices.length; j++){
-      office_list += ("<li>" + offices[j].getAttribute("name") + "</li>");
-    }
-
     var point = new google.maps.LatLng(
     parseFloat(markers[i].getAttribute("lat")),
     parseFloat(markers[i].getAttribute("lng")));
-    var html =
-    "<div class='iwContainer'><div class='iwTitle'><h3>" + name + "</h3></div>" +
-    "<div class='iwContent'><img src='" + picture + "'/> <ul>" + office_list + "</ul><br/>" + address + " <br/><a href='http://upcebu.edu.ph/'>See More</a></div></div>";
-    // "<b>" + name + "</b> <br/>" + address;
+
+    if(type == 'building'){
+      var offices = markers[i].childNodes[0].childNodes;
+      var office_list = "";
+      for(var j = 0; j < offices.length; j++){
+        office_list += ("<li>" + offices[j].getAttribute("name") + "</li>");
+      }
+      var html =
+      "<div class='iwContainer'><div class='iwTitle'><h3>" + name + "</h3></div>" +
+      "<div class='iwContent'><img src='" + picture + "'/> <ul>" + office_list + "</ul><br/>" + address + " <br/><a href='http://upcebu.edu.ph/'>See More</a></div></div>";
+    } else {
+      var html =
+      "<div class='iwContainer'><div class='iwTitle'><h3>" + name + "</h3></div>" +
+      "<div class='iwContent'><img src='" + picture + "'/><br/>" + address + " <br/><a href='http://upcebu.edu.ph/'>See More</a></div></div>";
+    }
     var icon = customIcons[type] || {};
     var marker = new google.maps.Marker({
       map: map,
@@ -87,18 +90,7 @@ function load() {
       title: " " + name,
       animation: google.maps.Animation.DROP,
     });
-    // google.maps.event.addListener(marker, 'click', (function(marker, i) {
-    //   return function() {
-    //       if (marker.getAnimation() != null) {
-    //         marker.setAnimation(null);
-    //       } else {
-    //         marker.setAnimation(google.maps.Animation.BOUNCE);
-    //       }
-    //     }
-    // })(marker, i));
-
-    bindInfoWindow(marker, map, infoBox, html);
-    
+    bindInfoWindow(marker, map, infoBox, html);  
     }
   });
 
