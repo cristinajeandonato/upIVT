@@ -58,6 +58,8 @@ while ($row = @mysql_fetch_assoc($result)){
       echo 'name="' . parseToXML($row2['office_name']) . '" ';
       echo 'description="' . parseToXML($row2['description']) .'" ';
       echo 'current_head="' . parseToXML($row2['current_head']) .'" ';
+      echo 'telephone_number=" ' . parseToXML($row2['telephone_number']) .'" ';
+      echo 'email_address=" ' . parseToXML($row2['email_address']) . '" ';
       echo '/>';
     }
     echo '</offices>';
