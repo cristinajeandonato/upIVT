@@ -75,20 +75,25 @@ function load() {
       var telephone_number = "";
       var office_name_link = "";
       var email_address = "";
-      // var modals = [];
-      var modals = "";
+      var modals = [];
+      var counter;
       for(var j = 0; j < offices.length; j++){
         office_name = offices[j].getAttribute("name");
         current_head = offices[j].getAttribute("current_head");
         telephone_number = offices[j].getAttribute("telephone_number");
         email_address = offices[j].getAttribute("email_address");
-        office_name_link = "<li><a href='#modal'>" + office_name + "</a><li>";
-        office_list += ("<li><a href='#modal_" + office_name + "'>" + office_name + "</a></li>");
-        createModal(office_name, current_head, telephone_number, email_address);
+        office_list += ("<li id='modal_link'><a href='#modal'>" + office_name + "</a></li>");
+        modals.push("<div id='modalDialog'><div><a href='#close' title='Close' class='close'>X</a><h2>" + j + office_name + "</h2><p>Current head: "+ current_head + "</p><p>Contact Number: " + telephone_number + "</div></div>");
+
       }
-      var html =
+     var html =
           "<div class='iwContainer'><div class='iwTitle'><h3>" + name + "</h3></div>" +
-          "<div class='iwContent'><img src='" + picture + "'/> <ul>" + office_list + "</ul><br/>" + address + " <br/><a href='http://upcebu.edu.ph/'>See More</a></div></div>";
+          "<div class='iwContent'><img src='" + picture + "'/> <ul>" + office_list + "</ul><br/>" + address + " <br/><a href='http://upcebu.edu.ph/'>See More</a>" + modals[4] + "</div>";
+      //"<div id='modal' class='modalDialog'> <div> <a href='#close' title='Close' class='close'>X</a><h2>" + office_name + "</h2></div></div>";
+    } else {
+      var html =
+      "<div class='iwContainer'><div class='iwTitle'><h3>" + name + "</h3></div>" +
+      "<div class='iwContent'><img src='" + picture + "'/><br/>" + address + " <br/><a href='http://upcebu.edu.ph/'>See More</a></div></div>";
     }
     var icon = customIcons[type] || {};
     var marker = new google.maps.Marker({
@@ -116,7 +121,7 @@ function load() {
   var input =(document.getElementById('input-search-box'));
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-
+  var searchBox = new google.maps.places.SearchBox((input));
 
   
 }
@@ -130,59 +135,17 @@ function load() {
 //   google.maps.event.addDomListener(window, 'load', load);
 // }
 
-function createModal(office_name, current_head, telephone_number, email_address) {
-  var modalWindow = document.createElement("div");
-  var modalId = document.createAttribute("id");
-  modalId.value = "#modal_"+office_name;
-  modalWindow .setAttributeNode(modalId);
-  var modalClass = document.createAttribute("class");
-  modalClass.value = "modalDialog";
-  modalWindow .setAttributeNode(modalClass);
+// function displayModal(office_name){
+//   google.maps.event.addListener(office_name, 'click', function()){
 
-  var modalContent = document.createElement("div");
-  modalWindow.appendChild(modalContent);
-
-  var closeLink = document.createElement("a");
-  var href = document.createAttribute("href");
-  href.value = "#close";
-  closeLink.setAttributeNode(href);
-  var title = document.createAttribute("title");
-  title.value = 'Close';
-  closeLink.setAttributeNode(title);
-  var classLink = document.createAttribute("class");
-  classLink.value = 'close';
-  closeLink.setAttributeNode(classLink);
-  modalContent.appendChild(closeLink);
-
-  var officeName = document.createElement("h2");
-  var officeNameText = document.createTextNode(office_name);
-  officeName.appendChild(officeNameText);
-  modalContent.appendChild(officeName);
-
-  var currentHead = document.createElement("p");
-  var currentHeadText = document.createTextNode("Current Head: " + current_head);
-  currentHead.appendChild(currentHeadText);
-  modalContent.appendChild(currentHead);
-
-  var telephoneNumber = document.createElement("p");
-  var telephoneNumberText = document.createTextNode("Telephone Number: " + telephone_number);
-  telephoneNumber.appendChild(telephoneNumberText);
-  modalContent.appendChild(telephoneNumber);
-
-  var emailAddress = document.createElement("p");
-  var emailAddressText = document.createTextNode("Email : " + email_address);
-  emailAddress.appendChild(emailAddressText);
-  modalContent.appendChild(emailAddress);
-
-  document.body.appendChild(modalWindow);
-}
+//   }
+// }
 
 function bindInfoWindow(marker, map, infoBox, html) {
   google.maps.event.addListener(marker, 'click', function() {
     if(infoBox){
         infoBox.close();
     }
-  console.log("hello");
   infoBox.setContent(html);
   infoBox.open(map, marker);
   });

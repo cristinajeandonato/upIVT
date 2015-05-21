@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var office_name = "AS";
+var current_head = "Arnold";
+var telephone_number = "25555555";
+var email_address = "are@you.com"
+function myFunction() {
+    var modalWindow = document.createElement("div");
+    var modalId = document.createAttribute("id");
+    modalId.value = "#modal_"+office_name;
+    modalWindow .setAttributeNode(modalId);
+    var modalClass = document.createAttribute("class");
+    modalClass.value = "modalDialog";
+    modalWindow .setAttributeNode(modalClass);
+
+    var modalContent = document.createElement("div");
+    modalWindow.appendChild(modalContent);
+
+    var closeLink = document.createElement("a");
+    var href = document.createAttribute("href");
+    href.value = "#close";
+    closeLink.setAttributeNode(href);
+    var title = document.createAttribute("title");
+    title.value = 'Close';
+    closeLink.setAttributeNode(title);
+    var classLink = document.createAttribute("class");
+    classLink.value = 'close';
+    closeLink.setAttributeNode(classLink);
+    modalContent.appendChild(closeLink);
+
+    var officeName = document.createElement("h2");
+    var officeNameText = document.createTextNode(office_name);
+    officeName.appendChild(officeNameText);
+    modalContent.appendChild(officeName);
+
+    var currentHead = document.createElement("p");
+    var currentHeadText = document.createTextNode("Current Head: " + current_head);
+    currentHead.appendChild(currentHeadText);
+    modalContent.appendChild(currentHead);
+
+    var telephoneNumber = document.createElement("p");
+    var telephoneNumberText = document.createTextNode("Telephone Number: " + telephone_number);
+    telephoneNumber.appendChild(telephoneNumberText);
+    modalContent.appendChild(telephoneNumber);
+
+    var emailAddress = document.createElement("p");
+    var emailAddressText = document.createTextNode("Email : " + email_address);
+    emailAddress.appendChild(emailAddressText);
+    modalContent.appendChild(emailAddress);
+
+    document.body.appendChild(modalWindow);
+}
+</script>
+</head>
+<body>
+
+<p>Click the button to make a BUTTON element with text.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+
+
+</body>
+</html>
